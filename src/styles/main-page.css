@@ -1,0 +1,69 @@
+.main-page {
+    height: 100vh;
+    width: 100vw;
+    position: relative; /* Keep it relative to position the child elements */
+    background-image: url('../images/arts-drafts/1page/background.png');
+}
+
+.table {
+    position: absolute; /* Position the table absolutely within the .main-page */
+    bottom: 0; /* Aligns the table at the bottom of the page */
+    left: 50%; /* Move the left edge to the center */
+    transform: translateX(-50%); /* Center the image horizontally */
+    z-index: 2; /* Ensure it appears above other elements if needed */
+    height: 100vh;
+    width: auto; /* Let the image maintain its natural width */
+}
+
+.window {
+    position: absolute; /* Positioning the element absolutely within the .main-page */
+    top: 0; /* Aligns the element to the bottom */
+    left: 50%; /* Moves the left edge to the center */
+    transform: translateX(-50%);
+    height: 100vh;
+    z-index: 1;
+}
+
+.clickable-block {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 50%; /* Move the left edge to the center */
+    transform: translateX(-50%); /* Center the image horizontally */
+    /*background-color: blueviolet;*/
+    height: 40vh;
+    width: 18vw;
+}
+
+.clickable-block:hover {
+    cursor: pointer;
+}
+
+input[type="text"] {
+    z-index: 4;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../images/arts-drafts/1page/inputline.png');
+    background-color: transparent;
+    background-size: cover; /* Ensure the background image covers the input */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the input field */
+    border: none; /* Remove default border */
+    color: #303030; /* Text color */
+    height: 13vh;
+    width: 65vh;
+    font-size: 2.9rem;
+    padding-left: 6vh;
+    padding-right: 6vh;
+    padding-top: 1vh;
+    text-align: center;
+}
+
+input[type="text"]:focus{
+    outline: none;
+}
+
+
