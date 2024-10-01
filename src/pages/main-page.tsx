@@ -2,8 +2,12 @@ import "../styles/main-page.css"
 import Table from "../images/arts-drafts/1page/table.png"
 import Window from "../images/arts-drafts/1page/window.png"
 import React, {useState} from "react";
+import {useNavigate} from "react-router";
+
 
 const MainPage = () => {
+    const navigate = useNavigate();
+
     const [isClicked, setClicked] = useState<boolean>(false);
     const [isEntered, setEntered] = useState<string>("");
     const codes = ['DaryaDarya', 'MisterMyBeloved', 'cringe', 'dsa']
@@ -21,6 +25,7 @@ const MainPage = () => {
             if (codes.includes(isEntered)) {
                 setEntered('');
                 clicked();
+                navigate("/gobelens");
                 return;
             }
             setEntered('');
