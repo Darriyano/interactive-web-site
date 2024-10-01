@@ -39,6 +39,14 @@
     cursor: pointer;
 }
 
+.input-wrapper {
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 input[type="text"] {
     z-index: 4;
     position: absolute;
@@ -66,8 +74,21 @@ input[type="text"]:focus{
     outline: none;
 }
 
-@media screen and (max-width:1000px) {
+@keyframes shake {
+    10% { transform: translateX(-10px); }
+    20% { transform: translateX(10px); }
+    30% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    50% { transform: translateX(-10px); }
+    60% { transform: translateX(10px); }
+    70% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+    90% { transform: translateX(-10px); }
+}
 
+
+.shake {
+    animation: shake 0.2s ease-in-out;
 }
 
 

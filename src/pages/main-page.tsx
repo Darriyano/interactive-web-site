@@ -8,8 +8,9 @@ import {useNavigate} from "react-router";
 const MainPage = () => {
     const navigate = useNavigate();
 
-    const [isClicked, setClicked] = useState<boolean>(false);
-    const [isEntered, setEntered] = useState<string>("");
+    const [shake, setShake] = useState<boolean>(false);  // State to control shake animation
+    const [isClicked, setClicked] = useState<boolean>(false); // State to control if input clicked
+    const [isEntered, setEntered] = useState<string>(""); // State to control input
     const codes = ['DaryaDarya', 'MisterMyBeloved', 'cringe', 'dsa']
 
     const clicked = () => {
@@ -25,10 +26,14 @@ const MainPage = () => {
             if (codes.includes(isEntered)) {
                 setEntered('');
                 clicked();
-                navigate("/gobelens");
+                navigate("/tapestries");
                 return;
+            } else {
+                setShake(true);  // Trigger shake animation
+                setTimeout(() => setShake(false), 500);  // Remove the shake class after animation
             }
             setEntered('');
+
         }
     };
 
@@ -44,13 +49,17 @@ const MainPage = () => {
                 ) : <div className='main-page'>
                     <img src={Table} alt='' className='table' style={{filter: 'blur(7px)'}}/>
                     <img src={Window} alt='' className='window' style={{filter: 'blur(7px)'}}/>
-                    <input className='input-field' type='text' value={isEntered}
-                           onChange={handleChange}
-                           onKeyDown={handleKeyPress}/>
-                </div>
+                    <div className={`input-wrapper ${shake ? 'shake' : ''}`}>
+                        <input className="input-field"
+                               type='text'
+                               value={isEntered}
+                               onChange={handleChange}
+                               onKeyDown={handleKeyPress}/>
+                    </div>
+                    </div>
+                    }
+                </>
+                )
             }
-        </>
-    )
-}
 
-export default MainPage
+            export default MainPage

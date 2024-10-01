@@ -1,4 +1,4 @@
-.main-gobelen-page {
+.main-tapestry-page {
     height: 100vh;
     width: 100vw;
     position: relative; /* Keep it relative to position the child elements */
@@ -23,6 +23,12 @@
     appearance: none;
     height: 80vh;
     animation: levitate 2s ease-in-out infinite;
+}
+
+.tapestry {
+    position: absolute;
+    height: 80vh;
+    left: 5%;
 }
 
 @keyframes levitate {
