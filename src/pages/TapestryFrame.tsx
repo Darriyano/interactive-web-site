@@ -9,6 +9,7 @@ interface TapestryFrame {
 }
 
 
+
 const TapestryFrame: React.FC<TapestryFrame> = ({isOpen, onClose, tapestryNumber}) => {
     const [shake, setShake] = useState<boolean>(false);  // State to control shake animation
     const [isEntered, setEntered] = useState<string>(""); // State to control input
