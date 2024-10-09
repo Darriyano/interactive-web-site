@@ -1,27 +1,25 @@
 import "../styles/tapestry-page.css"
 import Bill from "../images/arts-drafts/2page/billcipger.png";
-import TP from "../images/arts-drafts/2page/hahahasillycarpet.png";
 
 import React, {useState} from "react";
+import TapestryFrame from "./TapestryFrame";
 
 
 const TapestryPage = () => {
-    const [tapestry, setClicked] = useState<string>("");
+    const [isTapestryOpen, setTapestryOpen] = useState(false);
 
-    const setClickedTapestry = (value: string) => {
-        setClicked(value);
+    const toggleTapestry = () => {
+        setTapestryOpen(!isTapestryOpen);
     }
 
-    return (
+    return (<>
         <div className="main-tapestry-page">
-            {
-                !tapestry ? (
-                        <img src={TP} className='tapestry' alt="" onClick={() => setClickedTapestry("1")}/>)
-                    :
-                    <div></div>
-            }
+            <button onClick={toggleTapestry} style={{cursor: 'pointer'}}>THERE WILL BE A PICTURE OF THE FRAME</button>
             <img src={Bill} alt='' className='bill'/>
-        </div>)
+            <TapestryFrame isOpen={isTapestryOpen} onClose={toggleTapestry} tapestryNumber={1}/>
+
+        </div>
+    </>)
 
 }
 export default TapestryPage;
