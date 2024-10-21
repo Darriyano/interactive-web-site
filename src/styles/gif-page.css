@@ -1,0 +1,75 @@
+/* Общий контейнер */
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Вы можете поменять фон на другой цвет */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Стиль для GIF, чтобы он был на весь экран */
+.loading-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Покрывает весь экран, сохраняя пропорции */
+}
+
+.static-element {
+    height: 100vh;
+    width: 100vw;
+    position: fixed; /* Keep it relative to position the child elements */
+    background-image: url('../images/arts-drafts/3page/angrybillbg.png');
+}
+
+.bill-eye {
+    position: absolute;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animate-eye 0.5s linear infinite;
+}
+
+.bill-body {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes animate-eye {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0) translateX(0); /* Исходное положение */
+    }
+    10% {
+        transform: translate(-50%, -50%) translateY(-10px) translateX(-5px); /* Движение вверх и влево */
+    }
+    20% {
+        transform: translate(-50%, -50%) translateY(10px) translateX(5px); /* Движение вниз и вправо */
+    }
+    30% {
+        transform: translate(-50%, -50%) translateY(-7px) translateX(-3px); /* Движение вверх и влево */
+    }
+    40% {
+        transform: translate(-50%, -50%) translateY(8px) translateX(4px); /* Движение вниз и вправо */
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px) translateX(-5px); /* Движение вверх и влево */
+    }
+    60% {
+        transform: translate(-50%, -50%) translateY(10px) translateX(5px); /* Движение вниз и вправо */
+    }
+    70% {
+        transform: translate(-50%, -50%) translateY(-7px) translateX(-3px); /* Движение вверх и влево */
+    }
+    80% {
+        transform: translate(-50%, -50%) translateY(8px) translateX(4px); /* Движение вниз и вправо */
+    }
+    90% {
+        transform: translate(-50%, -50%) translateY(0) translateX(0); /* Возврат в исходное положение */
+    }
+}

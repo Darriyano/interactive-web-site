@@ -2,6 +2,7 @@ import "../styles/toggle-tapestry.css"
 import PIC from "../images/arts-drafts/2page/BURNcarpetBURNNNN.png"
 import React, {useState} from "react";
 import {useTapestry} from "./tapestriesStateHook";
+import {tapestryCodes} from "./codes";
 
 interface TapestryFrame {
     isOpen: boolean;
@@ -15,15 +16,13 @@ const TapestryFrame: React.FC<TapestryFrame> = ({isOpen, onClose, tapestryNumber
 
     const {statesDict, setTapState} = useTapestry();
 
-    const codes = [["daryadarya", "gg"], ["daryadarya", "gg"]]
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEntered(e.target.value);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
-            if (codes[tapestryNumber].includes(isEntered.toLowerCase())) {
+            if (tapestryCodes[tapestryNumber].includes(isEntered.toLowerCase())) {
                 setTapState(prevState => ({
                     states: prevState.states.map((state, index) =>
                         index === tapestryNumber && !state ? true : state

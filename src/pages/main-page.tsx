@@ -3,6 +3,7 @@ import Table from "../images/arts-drafts/1page/table.png"
 import Window from "../images/arts-drafts/1page/window.png"
 import React, {useState} from "react";
 import {useNavigate} from "react-router";
+import {bookCodes} from "./codes";
 
 
 const MainPage = () => {
@@ -11,7 +12,6 @@ const MainPage = () => {
     const [shake, setShake] = useState<boolean>(false);  // State to control shake animation
     const [isClicked, setClicked] = useState<boolean>(false); // State to control if input clicked
     const [isEntered, setEntered] = useState<string>(""); // State to control input
-    const codes = ['daryadarya', 'mistermybeloved', 'cringe', 'dsa']
 
     const clicked = () => {
         setClicked(!isClicked);
@@ -23,7 +23,7 @@ const MainPage = () => {
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
-            if (codes.includes(isEntered.toLowerCase())) {
+            if (bookCodes.includes(isEntered.toLowerCase())) {
                 setEntered('');
                 clicked();
                 navigate("/tapestries");
