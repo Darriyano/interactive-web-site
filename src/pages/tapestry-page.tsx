@@ -34,13 +34,11 @@ const TapestryPage = () => {
             {/*{Here will be not button, but image - clickable/not, it will place some number}*/}
             <div className="tap-location">
                 <div>
-                    <button onClick={() => toggleTapestry(0)} style={{cursor: 'pointer'}}>THERE WILL BE A PICTURE OF THE
-                        FRAME
+                    <button onClick={() => toggleTapestry(0)} style={{cursor: 'pointer'}}>AAAA1
                     </button>
                 </div>
                 <div>
-                    <button onClick={() => toggleTapestry(1)} style={{cursor: 'pointer'}}>THERE WILL BE A PICTURE OF THE
-                        FRAME
+                    <button onClick={() => toggleTapestry(1)} style={{cursor: 'pointer'}}>AAAA2
                     </button>
                 </div>
 
