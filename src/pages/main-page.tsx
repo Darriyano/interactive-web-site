@@ -11,7 +11,7 @@ const MainPage = () => {
     const [shake, setShake] = useState<boolean>(false);  // State to control shake animation
     const [isClicked, setClicked] = useState<boolean>(false); // State to control if input clicked
     const [isEntered, setEntered] = useState<string>(""); // State to control input
-    const codes = ['DaryaDarya', 'MisterMyBeloved', 'cringe', 'dsa']
+    const codes = ['daryadarya', 'mistermybeloved', 'cringe', 'dsa']
 
     const clicked = () => {
         setClicked(!isClicked);
@@ -23,7 +23,7 @@ const MainPage = () => {
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
-            if (codes.includes(isEntered)) {
+            if (codes.includes(isEntered.toLowerCase())) {
                 setEntered('');
                 clicked();
                 navigate("/tapestries");
@@ -56,10 +56,10 @@ const MainPage = () => {
                                onChange={handleChange}
                                onKeyDown={handleKeyPress}/>
                     </div>
-                    </div>
-                    }
-                </>
-                )
+                </div>
             }
+        </>
+    )
+}
 
-            export default MainPage
+export default MainPage

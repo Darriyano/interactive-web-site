@@ -15,3 +15,29 @@
 .tapestry-img{
     height: 100vh;
 }
+
+/*input[type="text"] {*/
+/*    z-index: 4;*/
+/*    position: absolute;*/
+/*    -webkit-appearance: none;*/
+/*    -moz-appearance: none;*/
+/*    appearance: none;*/
+/*    background-image: url('../images/arts-drafts/1page/inputline.png');*/
+/*    background-color: transparent;*/
+/*    background-size: cover; !* Ensure the background image covers the input *!*/
+/*    left: 50%;*/
+/*    top: 50%;*/
+/*    transform: translate(-50%, -50%); !* Center the input field *!*/
+/*    border: none; !* Remove default border *!*/
+/*    color: #303030; !* Text color *!*/
+/*    width: 15vh;*/
+/*    font-size: 2.9rem;*/
+/*    padding-left: 6vh;*/
+/*    padding-right: 6vh;*/
+/*    padding-top: 1vh;*/
+/*    text-align: center;*/
+/*}*/
+
+input[type="text"]:focus{
+    outline: none;
+}
